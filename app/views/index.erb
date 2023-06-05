@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+    Url Shortner Service Using Copilot
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <script type='text/javascript'>
+    $('#form').submit(function (ev) {
+        ev.preventDefault();
+        var $form = $(this),
+                url = $form.attr('action');
+        var posting = $.post(url, {url: $('#exampleInputEmail1').val()});
+        posting.done(function (data) {
+            $('#link').html(data)
+        });
+    });
+    </script>
+</head>
+
+<body>
+<div class="container">
+  <div class="row">
+    <h2>URL Shortner Service</h2>
+
+<form id="form" action="/url" method="post">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Enter URL</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter URL">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <br>
+    <br>
+
+    <div id="link"></div>
+  </div>
+</div>
+
+</body>
+</html>
