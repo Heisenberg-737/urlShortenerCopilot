@@ -11,8 +11,8 @@ class UrlShortnerService < Sinatra::Base
 
     enable :logging
 
-    set :views, File.expand_path('../app/views')
-    set: root, File.dirname('./app')
+    set :views, File.expand_path('./app/views')
+    set :root, File.dirname('./app')
 end
 
 Dir[File.expand_path('app/controllers/**/*.rb'), __FILE__].each {|file| require file}
